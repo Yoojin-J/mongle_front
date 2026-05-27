@@ -9,6 +9,7 @@ import BottomBar from './src/write/components/BottomBar.jsx'
 import Dialog from './shared/components/Dialog';
 import SearchField from './shared/components/SearchField';
 import { useState } from 'react';
+import Toast from './shared/components/Toast';
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -38,6 +39,18 @@ export default function App() {
 
         placeholder="기록할 음악을 선택해주세요"
 
+      />
+
+      <Toast
+        type="warning"
+        message="2,000자 이내로 내용을 줄여주세요."
+      />
+
+      <Toast
+        type="success"
+        message="2,000자 이내로 내용을 줄여주세요."
+        actionLabel="되돌리기"
+        onPressAction={() => console.log('undo')}
       />
 
       <ButtonIcon
