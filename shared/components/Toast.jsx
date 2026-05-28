@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
     paddingBottom: padding.S,
     gap: gap.M,
     borderRadius: radius.M,
-    backgroundColor: colors.bgDefaultWeak,
+    backgroundColor: colors.gray80,
     ...shadow.middleDown,
   },
   message: {
