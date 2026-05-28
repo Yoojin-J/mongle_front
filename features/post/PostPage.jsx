@@ -1,7 +1,7 @@
 import React from 'react'
 import { KeyboardAvoidingView, ScrollView, Text, TextInput, View, StyleSheet, Platform, Pressable, Image } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { useRecordFormStore } from '../store/useRecordFormStore';
+import { useRecordFormStore } from '../record/store/useRecordFormStore.js';
 import RecordImage from '../record/components/RecordImage';
 import RecordAudio from '../record/components/RecordAudio';
 import RecordFormDebug from '../letter/components/RecordFormDebug';
@@ -12,9 +12,14 @@ import { padding, gap } from '../../shared/styles/token';
 import { colors } from '../../shared/styles/color';
 import FoldCorner from '../../src/write/assets/graphic_paper.svg';
 import BottomBar from '../../src/write/components/BottomBar.jsx';
+import axios from 'axios';
 
 const PostPage = () => {
   const recordForm = useRecordFormStore();
+
+  const handleCommit = async() => {
+
+  };
 
   return (
     <KeyboardAvoidingView

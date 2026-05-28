@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { KeyboardAvoidingView, ScrollView, Text, TextInput, View, StyleSheet, Platform, Pressable } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { useRecordFormStore } from '../store/useRecordFormStore';
+import { useRecordFormStore } from '../record/store/useRecordFormStore.js';
 import TopNavigation from '../../shared/components/TopNavigation';
 import Profile from '../../shared/components/Profile.jsx';
 import Music from '../../shared/components/Music';
