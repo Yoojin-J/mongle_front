@@ -4,7 +4,7 @@ import { colors } from '../styles/color';
 import { padding, gap, radius } from '../styles/token';
 import { typo } from '../styles/typo';
 
-const DEFAULT_COVER_IMAGE = require('../../src/write/assets/cover_img.png');
+const DEFAULT_COVER_IMAGE = require('../../assets/write/cover_img.png');
 
 export default function Music({
   title = '노래 제목',

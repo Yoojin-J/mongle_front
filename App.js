@@ -2,12 +2,9 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
-import LetterPage from './features/letter/LetterPage';
-
 import { useFonts } from 'expo-font';
-import TopNavigation from './shared/components/TopNavigation';
-import SelectRecipient from './src/write/SelectRecipient.jsx';
-import SelectMusic from './src/write/SelectMusic.jsx';
+import LetterScreen from './features/write/letter/LetterScreen';
+
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -15,8 +12,6 @@ export default function App() {
     'Pretendard-Medium': require('./assets/fonts/Pretendard-Medium.ttf'),
     'Pretendard-SemiBold': require('./assets/fonts/Pretendard-SemiBold.ttf'),
   });
-
-  const [keyword, setKeyword] = useState('');
   const Stack = createNativeStackNavigator();
 
 
@@ -31,7 +26,7 @@ export default function App() {
       >
         <Stack.Screen
           name="Letter"
-          component={LetterPage}
+          component={LetterScreen}
         />
       </Stack.Navigator>
     </NavigationContainer>

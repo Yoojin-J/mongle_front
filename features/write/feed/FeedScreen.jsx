@@ -2,19 +2,19 @@ import React from 'react'
 import { KeyboardAvoidingView, ScrollView, Text, TextInput, View, StyleSheet, Platform, Pressable, Image } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useRecordFormStore } from '../record/store/useRecordFormStore.js';
-import RecordImage from '../record/components/RecordImage';
-import RecordAudio from '../record/components/RecordAudio';
-import RecordFormDebug from '../letter/components/RecordFormDebug';
-import TopNavigation from '../../shared/components/TopNavigation';
-import Music from '../../shared/components/Music';
-import RecordText from '../record/components/RecordText';
-import { padding, gap } from '../../shared/styles/token';
-import { colors } from '../../shared/styles/color';
-import FoldCorner from '../../src/write/assets/graphic_paper.svg';
-import BottomBar from '../../src/write/components/BottomBar.jsx';
+import RecordImage from '../record/components/RecordImage.jsx';
+import RecordAudio from '../record/components/RecordAudio.jsx';
+import RecordFormDebug from '../letter/components/RecordFormDebug.jsx';
+import TopNavigation from '../../../shared/components/TopNavigation.jsx';
+import Music from '../../../shared/components/Music';
+import RecordText from '../record/components/RecordText.jsx';
+import { padding, gap } from '../../../shared/styles/token';
+import { colors } from '../../../shared/styles/color';
+import FoldCorner from '../../../assets/write/graphic_paper.svg';
+import BottomBar from '../components/BottomBar.jsx';
 import axios from 'axios';
 
-const PostPage = () => {
+const FeedScreen = () => {
   const recordForm = useRecordFormStore();
 
   const handleCommit = async () => {
@@ -136,4 +136,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default PostPage;
+export default FeedScreen;

@@ -4,7 +4,7 @@ import { colors } from '../styles/color';
 import { padding, gap } from '../styles/token';
 import { typo } from '../styles/typo';
 
-const DEFAULT_PROFILE_IMAGE = require('../../src/write/assets/profile_img.png');
+const DEFAULT_PROFILE_IMAGE = require('../../assets/write/profile_img.png');
 
 export default function Profile({
   name = 'username',

@@ -2,18 +2,18 @@ import React, { useState } from 'react'
 import { KeyboardAvoidingView, ScrollView, Text, TextInput, View, StyleSheet, Platform, Pressable } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useRecordFormStore } from '../record/store/useRecordFormStore.js';
-import TopNavigation from '../../shared/components/TopNavigation';
-import Profile from '../../shared/components/Profile.jsx';
-import Music from '../../shared/components/Music';
-import RecordImage from '../record/components/RecordImage';
-import RecordText from '../record/components/RecordText';
-import FoldCorner from '../../src/write/assets/graphic_paper.svg';
-import BottomBar from '../../src/write/components/BottomBar.jsx';
+import TopNavigation from '../../../shared/components/TopNavigation.jsx';
+import Profile from '../../../shared/components/Profile.jsx';
+import Music from '../../../shared/components/Music.jsx';
+import RecordImage from '../record/components/RecordImage.jsx';
+import RecordText from '../record/components/RecordText.jsx';
+import FoldCorner from '../../../assets/write/graphic_paper.svg';
+import BottomBar from '../components/BottomBar.jsx';
 
-import { padding } from '../../shared/styles/token';
-import { colors } from '../../shared/styles/color';
+import { padding } from '../../../shared/styles/token.js';
+import { colors } from '../../../shared/styles/color.js';
 
-const LetterPage = () => {
+const LetterScreen = () => {
   const recordForm = useRecordFormStore();
 
   return (
@@ -90,4 +90,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default LetterPage
+export default LetterScreen

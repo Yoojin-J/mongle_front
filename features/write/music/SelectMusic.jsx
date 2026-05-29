@@ -1,13 +1,11 @@
 import { View, FlatList } from 'react-native';
 
-import TopNavigation from '../../shared/components/TopNavigation';
-import SearchField from '../../shared/components/SearchField';
-import ListHeader from '../../shared/components/ListHeader';
-import ListRow from './components/ListRow';
+import TopNavigation from '../../../shared/components/TopNavigation';
+import SearchField from '../../../shared/components/SearchField';
+import ListHeader from '../../../shared/components/ListHeader';
+import ListRow from '../components/ListRow';
 
 import UseSelectMusic from './hook/UseSelectMusic';
-import { styles } from './styles/SelectStyle';
-
 
 export default function SelectMusic({
   navigation,
@@ -25,7 +23,7 @@ export default function SelectMusic({
   } = UseSelectMusic();
 
   return (
-    <View style={styles.container}>
+    <View>
       <TopNavigation
         title="음악 선택"
         buttonLabel="다음"

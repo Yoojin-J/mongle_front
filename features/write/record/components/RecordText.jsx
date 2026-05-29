@@ -4,8 +4,8 @@ import {
   TextInput,
   StyleSheet,
 } from 'react-native';
-import { typo } from '../../../shared/styles/typo';
-import { padding } from '../../../shared/styles/token';
+import { typo } from '../../../../shared/styles/typo';
+import { padding } from '../../../../shared/styles/token';
 
 const INPUT_TYPO = typo.bodySmall;
 
