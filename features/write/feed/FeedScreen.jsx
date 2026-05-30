@@ -71,7 +71,8 @@ const FeedScreen = () => {
     // =========== 전송 ============
     try {
       const response = await axios.post(
-        'http://localhost:3000/feed',
+        // 192.168.0.3
+        'http://192.168.0.3:3000/feed',
         formData,
         {
           headers: {
