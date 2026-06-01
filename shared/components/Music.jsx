@@ -12,13 +12,13 @@ export default function Music({
   imageSource,
   style,
 }) {
-  const currentImageSource = imageSource || DEFAULT_COVER_IMAGE;
+  const currentImageSource = typeof imageSource === 'string' ? { uri: imageSource } : DEFAULT_COVER_IMAGE;
 
   return (
     <View style={[styles.wrapper, style]}>
       <View style={styles.container}>
         <Image
-          source={{ uri: currentImageSource }}
+          source={currentImageSource}
           style={styles.cover}
           resizeMode="cover"
         />
