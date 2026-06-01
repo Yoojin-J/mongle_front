@@ -25,9 +25,38 @@ function TabItem({ label, isActive, disabled, onPress }) {
   );
 }
 
-// React Navigation Bottom Tabs의 tabBar prop으로 사용
-// <Tab.Navigator tabBar={(props) => <TabBar {...props} />}>
-export default function TabBar({ state, descriptors, navigation }) {
+// 두 가지 모드 지원:
+//
+// 1) React Navigation Bottom Tabs의 tabBar prop으로 사용
+//    <Tab.Navigator tabBar={(props) => <TabBar {...props} />}>
+//
+// 2) 화면 내 독립 탭으로 사용
+//    <TabBar
+//      tabs={[{ key: 'a', label: '탭A' }, { key: 'b', label: '탭B', disabled: true }]}
+//      activeTab="a"
+//      onTabPress={(key) => setActive(key)}
+//    />
+export default function TabBar({ state, descriptors, navigation, tabs, activeTab, onTabPress }) {
+  // 독립 모드: tabs 배열을 직접 받은 경우
+  if (tabs) {
+    return (
+      <View style={styles.container}>
+        {tabs.map(({ key, label, disabled = false }) => (
+          <TabItem
+            key={key}
+            label={label}
+            isActive={activeTab === key}
+            disabled={disabled}
+            onPress={() => {
+              if (activeTab !== key && !disabled) onTabPress?.(key);
+            }}
+          />
+        ))}
+      </View>
+    );
+  }
+
+  // React Navigation 모드
   return (
     <View style={styles.container}>
       {state.routes.map((route, index) => {
@@ -43,9 +72,7 @@ export default function TabBar({ state, descriptors, navigation }) {
             isActive={isActive}
             disabled={disabled}
             onPress={() => {
-              if (!isActive && !disabled) {
-                navigation.navigate(route.name);
-              }
+              if (!isActive && !disabled) navigation.navigate(route.name);
             }}
           />
         );
